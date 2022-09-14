@@ -1,6 +1,24 @@
-const characters = {
-    Lois: {
-        name: "a"
-    }
-}
-export {characters}
+export const characters = [
+  {
+    name: "Lois",
+    words: [
+        {
+
+        },
+        {
+
+        }
+    ]
+  },
+  {
+    name: "Peter",
+    words: [
+        {
+
+        },
+        {
+
+        }
+    ]
+  },
+];
