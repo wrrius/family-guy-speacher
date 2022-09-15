@@ -3,10 +3,12 @@ export const characters = [
     name: "Lois",
     words: [
         {
-
+          word: "Peter",
+          audio: ""
         },
         {
-
+          word: "",
+          audio: ""
         }
     ]
   },
@@ -14,10 +16,16 @@ export const characters = [
     name: "Peter",
     words: [
         {
-
+          word: "Hey  Lois",
+          audio: ""
         },
         {
-
+          word: "Hey",
+          audio: ""
+        },
+        {
+          word: "Lois",
+          audio: ""
         }
     ]
   },
