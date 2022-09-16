@@ -11,8 +11,12 @@ function selectorMaker() {
 selectorMaker();
 document.querySelector(".selector").addEventListener("click", function () {
     document.querySelectorAll(".button").forEach((e) => e.remove());
-    document.body.insertAdjacentHTML(
-        "beforeend",
-        `<button class=button>${document.querySelector(".selector").value}</button>`
-    )
+    const selectedCharacter = characters.find(character => character.name === this.value)
+    selectedCharacter.words.forEach((word) => {
+      document.querySelector(".selector").insertAdjacentHTML(
+        "afterend",
+        `<button class=button id=${word.word}>${word.word}</button>
+          `
+      );
+    });
 });
