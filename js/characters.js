@@ -4,11 +4,11 @@ export const characters = [
     words: [
         {
           word: "Peter",
-          audio: ""
+          audio: `audio/lois-peter.mp3`
         },
         {
-          word: "",
-          audio: ""
+          word: "Meg",
+          audio: "audio/lois-meg.mp3"
         }
     ]
   },
@@ -17,15 +17,23 @@ export const characters = [
     words: [
         {
           word: "Hey  Lois",
-          audio: ""
+          audio: "audio/peter-hey-lois.mp3"
         },
         {
           word: "Hey",
-          audio: ""
+          audio: "audio/peter-hey.mp3"
         },
         {
           word: "Lois",
-          audio: ""
+          audio: "audio/peter-lois.mp3"
+        },
+        {
+          word: "Good",
+          audio: "audio/peter-good.mp3"
+        },
+        {
+          word: "Good Morning",
+          audio: "audio/peter-good-morning.mp3"
         }
     ]
   },
