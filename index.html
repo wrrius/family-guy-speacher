@@ -10,6 +10,81 @@
     <select name="family guys" class="selector">
         <option value="" label="true">Choose a Family Character</option>
     </select>
-    <script src="./js/index.js" type="module" ></script>
+    <script type="module" >
+        const characters = [
+  {
+    name: "Lois",
+    words: [
+        {
+          word: "Peter",
+          audio: `audio/lois-peter.mp3`
+        },
+        {
+          word: "Meg",
+          audio: "audio/lois-meg.mp3"
+        }
+    ]
+  },
+  {
+    name: "Peter",
+    words: [
+        {
+          word: "Hey  Lois",
+          audio: "audio/peter-hey-lois.mp3"
+        },
+        {
+          word: "Hey",
+          audio: "audio/peter-hey.mp3"
+        },
+        {
+          word: "Lois",
+          audio: "audio/peter-lois.mp3"
+        },
+        {
+          word: "Good",
+          audio: "audio/peter-good.mp3"
+        },
+        {
+          word: "Good Morning",
+          audio: "audio/peter-good-morning.mp3"
+        }
+    ]
+  },
+];
+function selectorMaker() {
+  characters.forEach((character) => {
+    document.querySelector(".selector").insertAdjacentHTML(
+      "beforeend",
+      `<option value="${character.name}">${character.name}</option>
+        `
+    );
+  });
+}
+selectorMaker();
+function wordButtons(name, buttonWord) {
+  document.querySelectorAll(".button").forEach((e) => e.remove());
+  characters.forEach((character) => {
+    if (character.name === name) {
+      character.words.forEach((word) => {
+        document.querySelector(".selector").insertAdjacentHTML(
+          "afterend",
+          `<button class=button >${word.word}</button>`
+        );
+      if (word.word === buttonWord) {
+        new Audio(character.words.find((word) => word.word === buttonWord).audio).play();
+      }
+      }); 
+      document.querySelectorAll(".button").forEach((button) =>
+        button.addEventListener("click", function () {
+          wordButtons(document.querySelector(".selector").value, this.textContent)
+        })
+      );
+    }
+  })
+}
+document.querySelector(".selector").addEventListener("change", function () {
+  wordButtons(this.value)
+});
+    </script>
 </body>
 </html>
